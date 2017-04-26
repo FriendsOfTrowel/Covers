@@ -36,7 +36,9 @@
 
     <script src="./javascript/covers.js"></script>
     <script type="text/javascript">
-        var covers = new TrowelCovers(document.querySelectorAll('.cover'));
+        var covers = new TrowelCovers(document.querySelectorAll('.cover'), {
+            offset: -100,
+        });
     </script>
   </body>
 </html>

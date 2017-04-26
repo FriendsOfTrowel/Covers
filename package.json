@@ -30,6 +30,7 @@
   ],
   "homepage": "https://github.com/FriendsOfTrowel/Covers#readme",
   "dependencies": {
+    "jump.js": "^1.0.2",
     "trowel-core": "^4.0.2"
   },
   "devDependencies": {

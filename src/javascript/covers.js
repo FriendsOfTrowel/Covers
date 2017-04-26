@@ -1,3 +1,6 @@
+import jump from '../../node_modules/jump.js';
+
+
 export default class TrowelCovers {
   constructor(elements, options = {}) {
     [].slice.call(elements).forEach(function(element, index) {
@@ -18,7 +21,7 @@ class TrowelCover {
   _setOptions(customOptions) {
     const defaultOptions = {
       scrollDuration: 500,
-      topOffset: 0,
+      offset: 0,
     };
 
     let options = {};
@@ -38,8 +41,10 @@ class TrowelCover {
   }
 
   scrollDown() {
-    const scrollTop = this.element.offsetTop + this.element.offsetHeight - this.options.topOffset;
-    return this._smoothScrollTo(document.body, scrollTop, this.options.scrollDuration);
+    const scrollTop = this.element.offsetTop + this.element.offsetHeight + this.options.offset;
+    return jump(scrollTop, {
+      duration: this.options.scrollDuration,
+    });
   }
 
   _smoothScrollTo(element, target, duration) {
