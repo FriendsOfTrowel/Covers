@@ -1,0 +1,49 @@
+{% set syntax = syntax|default({
+    'prefix': false,
+    'separator': {
+        'prefix': '-',
+        'element': '__',
+        'modifier': '--',
+    },
+}) %}
+
+{% set blockSelector = syntax.prefix|default(false) ? syntax.prefix ~ syntax.separator.prefix ~ 'cover' : 'cover' %}
+{% set elementSelector = blockSelector ~ syntax.separator.element %}
+
+{% set modifiersClasses = '' %}
+{% for modifier in modifiers|default([]) %}
+    {% set modifiersClasses = modifiersClasses ~ ' ' ~ blockSelector ~ syntax.separator.modifier ~ modifier %}
+{% endfor %}
+
+{% set attrsGenerated = '' %}
+{% for attr_name, attr_value in attrs|default([]) %}
+    {% set attrsGenerated = attrsGenerated ~ ' ' ~ attr_name ~ '="' ~ attr_value ~ '"' %}
+{% endfor %}
+
+<div class="{{ blockSelector ~ modifiersClasses }}{{ classes|default(false) ? ' ' ~ classes|join(' ') }}"{{ attrsGenerated|raw }}>
+    {% block img %}
+        {% if img|default(false) %}
+            <img class="{{ elementSelector ~ 'image' }}" src="{{ img }}">
+        {% endif %}
+    {% endblock img %}
+
+    <div class="{{ elementSelector ~ 'content' }}">
+        <div class="{{ elementSelector ~ 'header' }}">
+            {{ block('header') }}
+        </div>
+
+        <div class="{{ elementSelector ~ 'body' }}">
+            {{ block('body') }}
+        </div>
+
+        <div class="{{ elementSelector ~ 'footer' }}">
+            {% block footer %}
+                <button class="{{ elementSelector ~ 'scroll-btn' }}" data-cover-scrolldown>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="15" viewBox="0 0 32 17">
+                        <path fill="currentColor" d="M29.4292.3693c.4997-.4924 1.3025-.4924 1.7986 0 .496.4923.498 1.288 0 1.7802L16.6992 16.5348c-.496.4924-1.299.4924-1.7986 0L.372 2.1495c-.496-.4923-.496-1.288 0-1.7802.498-.4924 1.3026-.4924 1.7987 0l13.63 13.1194L29.4293.3693z"/>
+                    </svg>
+                </button>
+            {% endblock footer %}
+        </div>
+    </div>
+</div>

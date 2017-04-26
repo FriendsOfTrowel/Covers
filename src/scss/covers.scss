@@ -1,0 +1,192 @@
+/**
+ * Covers
+ */
+
+@import 'utils/syntaxes';
+@import 'utils/trowel-variables';
+
+$cover--selector: selector(new 'cover' with $covers--syntax);
+
+@include statement($cover--selector, (
+  ('font-size', $covers--font-size),
+  ('font-family', $covers--font-family),
+  ('font-weight', $covers--font-weight),
+  ('text-transform', $covers--text-transform),
+  ('letter-spacing', $covers--letter-spacing),
+  ('line-height', $covers--line-height),
+  ('text-align', $covers--text-align),
+  ('text-decoration', $covers--text-decoration),
+  ('margin', $covers--margin),
+  ('border-width', $covers--border-width),
+  ('border-style', $covers--border-style),
+  ('border-color', $covers--border-color),
+  ('border-radius', $covers--border-radius),
+  ('color', $covers--color),
+  ('box-shadow', $covers--box-shadow),
+  ('background', $covers--background),
+  ('background-color', $covers--background-color),
+  ('position', relative),
+));
+
+
+$cover-overlay--selector: selector(set $cover--selector pseudo-element 'before');
+
+@include statement($cover-overlay--selector, (
+  ('content', ''),
+  ('position', absolute),
+  ('top', 0),
+  ('left', 0),
+  ('width', 100%),
+  ('height', 100%),
+  ('z-index', 1),
+  ('background', $covers-overlay--background),
+  ('background-color', $covers-overlay--background-color),
+  ('opacity', $covers-overlay--opacity),
+));
+
+
+$cover-image--selector: selector(set $cover--selector element 'image');
+
+@include statement($cover-image--selector, (
+  ('position', absolute),
+  ('top', 0),
+  ('left', 0),
+  ('width', 100%),
+  ('height', 100%),
+  ('z-index', 0),
+  ('object-fit', $covers-image--object-fit),
+  ('opacity', $covers-image--opacity),
+));
+
+
+$cover-content--selector: selector(set $cover--selector element 'content');
+
+@include statement($cover-content--selector, (
+  ('position', relative),
+  ('z-index', 2),
+  ('font-size', $covers-content--font-size),
+  ('font-family', $covers-content--font-family),
+  ('font-weight', $covers-content--font-weight),
+  ('text-transform', $covers-content--text-transform),
+  ('letter-spacing', $covers-content--letter-spacing),
+  ('line-height', $covers-content--line-height),
+  ('text-align', $covers-content--text-align),
+  ('text-decoration', $covers-content--text-decoration),
+  ('margin', $covers-content--margin),
+  ('padding', $covers-content--padding),
+  ('color', $covers-content--color),
+  ('background', $covers-content--background),
+  ('background-color', $covers-content--background-color),
+  ('width', $covers-content--width),
+  ('max-width', $covers-content--max-width),
+  ('display', flex),
+  ('flex-direction', column),
+  ('height', $covers--height),
+  ('min-height', $covers--min-height),
+  ('max-height', $covers--max-height),
+));
+
+
+$cover-header--selector: selector(set $cover--selector element 'header');
+
+@include statement($cover-header--selector, (
+  ('position', relative),
+  ('z-index', 2),
+  ('font-size', $covers-header--font-size),
+  ('font-family', $covers-header--font-family),
+  ('font-weight', $covers-header--font-weight),
+  ('text-transform', $covers-header--text-transform),
+  ('letter-spacing', $covers-header--letter-spacing),
+  ('line-height', $covers-header--line-height),
+  ('text-align', $covers-header--text-align),
+  ('text-decoration', $covers-header--text-decoration),
+  ('margin', $covers-header--margin),
+  ('padding', $covers-header--padding),
+  ('color', $covers-header--color),
+  ('background', $covers-header--background),
+  ('background-color', $covers-header--background-color),
+  ('width', $covers-header--width),
+  ('max-width', $covers-header--max-width),
+));
+
+
+$cover-body--selector: selector(set $cover--selector element 'body');
+
+@include statement($cover-body--selector, (
+  ('position', relative),
+  ('z-index', 2),
+  ('font-size', $covers-body--font-size),
+  ('font-family', $covers-body--font-family),
+  ('font-weight', $covers-body--font-weight),
+  ('text-transform', $covers-body--text-transform),
+  ('letter-spacing', $covers-body--letter-spacing),
+  ('line-height', $covers-body--line-height),
+  ('text-align', $covers-body--text-align),
+  ('text-decoration', $covers-body--text-decoration),
+  ('margin', $covers-body--margin),
+  ('padding', $covers-body--padding),
+  ('color', $covers-body--color),
+  ('background', $covers-body--background),
+  ('background-color', $covers-body--background-color),
+  ('width', $covers-body--width),
+  ('max-width', $covers-body--max-width),
+  ('flex-grow', 1),
+));
+
+
+$cover-footer--selector: selector(set $cover--selector element 'footer');
+
+@include statement($cover-footer--selector, (
+  ('position', relative),
+  ('z-index', 2),
+  ('font-size', $covers-footer--font-size),
+  ('font-family', $covers-footer--font-family),
+  ('font-weight', $covers-footer--font-weight),
+  ('text-transform', $covers-footer--text-transform),
+  ('letter-spacing', $covers-footer--letter-spacing),
+  ('line-height', $covers-footer--line-height),
+  ('text-align', $covers-footer--text-align),
+  ('text-decoration', $covers-footer--text-decoration),
+  ('margin', $covers-footer--margin),
+  ('padding', $covers-footer--padding),
+  ('color', $covers-footer--color),
+  ('background', $covers-footer--background),
+  ('background-color', $covers-footer--background-color),
+  ('width', $covers-footer--width),
+  ('max-width', $covers-footer--max-width),
+));
+
+
+$cover-scrollbtn--selector: selector(set $cover--selector element 'scroll-btn');
+
+@include statement($cover-scrollbtn--selector, (
+  ('vertical-align', $covers-button--vertical-align),
+  ('float', $covers-button--float),
+  ('display', $covers-button--display),
+  ('border-width', $covers-button--border-width),
+  ('padding', $covers-button--padding),
+  ('width', $covers-button--width),
+  ('margin', $covers-button--margin),
+  ('height', $covers-button--height),
+  ('color', $covers-button--color),
+  ('border-color', $covers-button--border-color),
+  ('background-color', $covers-button--background-color),
+  ('opacity', $covers-button--opacity),
+  ('font-size', $covers-button--font-size),
+  ('text-decoration', $covers-button--text-decoration),
+  ('line-height', $covers-button--line-height),
+  ('text-align', $covers-button--text-align),
+  ('font-family', $covers-button--font-family),
+  ('font-weight', $covers-button--font-weight),
+  ('text-transform', $covers-button--text-transform),
+  ('letter-spacing', $covers-button--letter-spacing),
+  ('border-radius', $covers-button--border-radius),
+  ('border-style', $covers-button--border-style),
+  ('box-shadow', $covers-button--box-shadow),
+  ('transition', $covers-button--transition),
+  ('cursor', $covers-button--cursor),
+));
+
+#{selector--get-print($cover-scrollbtn--selector)} svg {
+  vertical-align: middle;
+}

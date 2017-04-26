@@ -1,0 +1,59 @@
+{
+  "name": "trowel-covers",
+  "version": "0.0.0",
+  "description": "The official Trowel Component for covers",
+  "scripts": {
+    "test": "gulp",
+    "build-javascript": "webpack",
+    "build-javascript-dev": "webpack --progress --colors --watch",
+    "start": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FriendsOfTrowel/Covers.git"
+  },
+  "author": "Loïc Goyet <loic@troopers.email>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FriendsOfTrowel/Covers/issues"
+  },
+  "keywords": [
+    "scss",
+    "css",
+    "twig",
+    "html",
+    "javascript",
+    "js",
+    "trowel",
+    "trowel-covers",
+    "cover"
+  ],
+  "homepage": "https://github.com/FriendsOfTrowel/Covers#readme",
+  "dependencies": {
+    "trowel-core": "^4.0.2"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-prettify": "^0.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-twig": "^0.7.0",
+    "run-sequence": "^1.2.2",
+    "webpack": "^2.4.1",
+    "yargs": "^7.1.0"
+  }
+}

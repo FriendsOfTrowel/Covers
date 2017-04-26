@@ -1,0 +1,46 @@
+{
+  "name": "trowel-covers",
+  "homepage": "https://github.com/FriendsOfTrowel/Covers",
+  "authors": [
+    "Loïc Goyet <loic@troopers.email>"
+  ],
+  "description": "The official Trowel Component for covers",
+  "main": [
+    "src/scss/covers.scss",
+    "src/twig/cover.html.twig",
+    "dest/javascript/covers.js",
+    "injector.json"
+  ],
+  "moduleType": "globals",
+  "keywords": [
+    "scss",
+    "css",
+    "twig",
+    "html",
+    "javascript",
+    "js",
+    "trowel",
+    "trowel-covers",
+    "cover"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    ".bowerrc",
+    ".gitignore",
+    "gulpfile.babel.js",
+    "package.json",
+    "webpack.config.js",
+    ".babelrc",
+    "sache.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FriendsOfTrowel/Covers.git"
+  },
+  "dependencies": {
+    "trowel-core": "^4.0.2"
+  }
+}

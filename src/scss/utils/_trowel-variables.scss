@@ -1,0 +1,146 @@
+// scss-lint:disable ColorVariable
+
+$covers--font-size: 1rem !default;
+$covers--font-family: null !default;
+$covers--font-weight: null !default;
+$covers--text-transform: null !default;
+$covers--letter-spacing: null !default;
+$covers--line-height: null !default;
+$covers--text-align: null !default;
+$covers--text-decoration: null !default;
+$covers--margin: 0 0 2em !default;
+$covers--border-width: null !default;
+$covers--border-style: null !default;
+$covers--border-color: null !default;
+$covers--border-radius: null !default;
+$covers--color: null !default;
+$covers--box-shadow: null !default;
+$covers--background: null !default;
+$covers--background-color: null !default;
+$covers--height: null !default;
+$covers--min-height: 18.75em !default;
+$covers--max-height: null !default;
+
+$covers-overlay--background: null !default;
+$covers-overlay--background-color: (
+  '-overlaid': rgba(0, 0, 0, 0.6),
+) !default;
+$covers-overlay--opacity: null !default;
+
+$covers-image--opacity: null !default;
+$covers-image--object-fit: cover !default;
+
+
+$covers-content--font-size: null !default;
+$covers-content--font-family: null !default;
+$covers-content--font-weight: null !default;
+$covers-content--text-transform: null !default;
+$covers-content--letter-spacing: null !default;
+$covers-content--line-height: null !default;
+$covers-content--text-align: null !default;
+$covers-content--text-decoration: null !default;
+$covers-content--margin: auto !default;
+$covers-content--padding: 0 1em !default;
+$covers-content--color: (
+  '-overlaid': rgb(255, 255, 255),
+) !default;
+$covers-content--background: null !default;
+$covers-content--background-color: null !default;
+$covers-content--width: null !default;
+$covers-content--max-width: 75em !default;
+
+
+$covers-header--font-size: null !default;
+$covers-header--font-family: null !default;
+$covers-header--font-weight: null !default;
+$covers-header--text-transform: null !default;
+$covers-header--letter-spacing: null !default;
+$covers-header--line-height: null !default;
+$covers-header--text-align: null !default;
+$covers-header--text-decoration: null !default;
+$covers-header--margin: null !default;
+$covers-header--padding: null !default;
+$covers-header--color: null;
+$covers-header--background: null !default;
+$covers-header--background-color: null !default;
+$covers-header--height: null !default;
+$covers-header--max-height: null !default;
+$covers-header--width: null !default;
+$covers-header--max-width: null !default;
+
+
+$covers-body--font-size: null !default;
+$covers-body--font-family: null !default;
+$covers-body--font-weight: null !default;
+$covers-body--text-transform: null !default;
+$covers-body--letter-spacing: null !default;
+$covers-body--line-height: null !default;
+$covers-body--text-align: null !default;
+$covers-body--text-decoration: null !default;
+$covers-body--margin: null !default;
+$covers-body--padding: null !default;
+$covers-body--color: null;
+$covers-body--background: null !default;
+$covers-body--background-color: null !default;
+$covers-body--height: null !default;
+$covers-body--max-height: null !default;
+$covers-body--width: null !default;
+$covers-body--max-width: null !default;
+
+
+$covers-footer--font-size: null !default;
+$covers-footer--font-family: null !default;
+$covers-footer--font-weight: null !default;
+$covers-footer--text-transform: null !default;
+$covers-footer--letter-spacing: null !default;
+$covers-footer--line-height: null !default;
+$covers-footer--text-align: center !default;
+$covers-footer--text-decoration: null !default;
+$covers-footer--margin: null !default;
+$covers-footer--padding: null !default;
+$covers-footer--color: null;
+$covers-footer--background: null !default;
+$covers-footer--background-color: null !default;
+$covers-footer--height: null !default;
+$covers-footer--max-height: null !default;
+$covers-footer--width: null !default;
+$covers-footer--max-width: null !default;
+
+
+
+
+$covers-button--vertical-align: middle !default;
+$covers-button--float: null !default;
+$covers-button--display: inline-block !default;
+$covers-button--border-width: 0 !default;
+$covers-button--padding: 0.666666667em !default;
+$covers-button--width: null !default;
+$covers-button--margin: null !default;
+$covers-button--height: null !default;
+$covers-button--color: (
+  'default': inherit,
+  ':hover': rgb(0, 0, 0),
+  ':active': rgb(0, 0, 0),
+  ':focus': rgb(0, 0, 0),
+) !default;
+$covers-button--border-color: null !default;
+$covers-button--background-color: (
+  'default': transparent,
+  ':hover': rgb(255, 255, 255),
+  ':active': rgb(255, 255, 255),
+  ':focus': rgb(255, 255, 255),
+) !default;
+$covers-button--opacity: null !default;
+$covers-button--font-size: 1em !default;
+$covers-button--text-decoration: null !default;
+$covers-button--line-height: null !default;
+$covers-button--text-align: center !default;
+$covers-button--font-family: null !default;
+$covers-button--font-weight: null !default;
+$covers-button--text-transform: null !default;
+$covers-button--letter-spacing: null !default;
+$covers-button--border-radius: null !default;
+$covers-button--border-style: null !default;
+$covers-button--box-shadow: null !default;
+$covers-button--transition: null !default;
+$covers-button--cursor: pointer !default;
