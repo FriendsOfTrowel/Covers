@@ -21,6 +21,8 @@
 {% endfor %}
 
 <div class="{{ blockSelector ~ modifiersClasses }}{{ classes|default(false) ? ' ' ~ classes|join(' ') }}"{{ attrsGenerated|raw }}>
+    <div class="{{ elementSelector ~ 'overlay' }}"{% if opacity|default(null) %} style="opacity: {{ opacity }};"{% endif %}></div>
+
     {% block img %}
         {% if img|default(false) %}
             <img class="{{ elementSelector ~ 'image' }}" src="{{ img }}">

@@ -29,10 +29,9 @@ $cover--selector: selector(new 'cover' with $covers--syntax);
 ));
 
 
-$cover-overlay--selector: selector(set $cover--selector pseudo-element 'before');
+$cover-overlay--selector: selector(set $cover--selector element 'overlay');
 
 @include statement($cover-overlay--selector, (
-  ('content', ''),
   ('position', absolute),
   ('top', 0),
   ('left', 0),
