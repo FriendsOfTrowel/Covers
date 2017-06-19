@@ -1,6 +1,5 @@
 import jump from '../../node_modules/jump.js';
 
-
 export default class TrowelCovers {
   constructor(elements, options = {}) {
     [].slice.call(elements).forEach(function(element, index) {
@@ -13,37 +12,51 @@ class TrowelCover {
   constructor(element, customOptions = {}) {
     this.element = element;
     this.scrollDownTriggers = [].slice.call(this.element.querySelectorAll('[data-cover-scrolldown]'));
-    this.options = this._setOptions(customOptions);
+    this.options = customOptions;
 
-    this._listener();
+    this.events = this.events();
+    this.listener();
+    this.element.dispatchEvent(this.events.mounted);
+    return;
   }
 
-  _setOptions(customOptions) {
+  set options(customOptions) {
     const defaultOptions = {
       scrollDuration: 500,
       offset: 0,
     };
 
-    let options = {};
-
-    Object.keys(defaultOptions).forEach(option => {
-      if (customOptions[option]) return options[option] = customOptions[option];
-      return options[option] = defaultOptions[option];
-    });
-
-    return options;
+    return this._options = Object.keys(defaultOptions).reduce((options, option) => {
+      options[option] = customOptions[option] ? customOptions[option] : defaultOptions[option];
+      return options;
+    }, {})
   }
 
-  _listener() {
+  get options() {
+    return this._options;
+  }
+
+  scrollDown() {
+    this.element.dispatchEvent(this.events.jump);
+    jump(this.element, {
+      duration: this.options.scrollDuration,
+      offset: this.element.offsetHeight + this.options.offset,
+    });
+    this.element.dispatchEvent(this.events.jumped);
+    return;
+  }
+
+  listener() {
     this.scrollDownTriggers.forEach(trigger => {
       trigger.addEventListener('click', () => this.scrollDown())
     });
   }
 
-  scrollDown() {
-    return jump(this.element, {
-      duration: this.options.scrollDuration,
-      offset: this.element.offsetHeight + this.options.offset,
-    });
+  events() {
+    const jump = new Event('trowel.cover.jump');
+    const jumped = new Event('trowel.cover.jumped');
+    const mounted = new Event('trowel.cover.mounted');
+
+    return { jump, jumped, mounted };
   }
 }
