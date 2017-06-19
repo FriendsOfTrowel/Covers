@@ -294,16 +294,22 @@ var TrowelCover = function () {
     this.scrollDownTriggers = [].slice.call(this.element.querySelectorAll('[data-cover-scrolldown]'));
     this.options = customOptions;
 
-    return this.listener();
+    this.events = this.events();
+    this.listener();
+    this.element.dispatchEvent(this.events.mounted);
+    return;
   }
 
   _createClass(TrowelCover, [{
     key: 'scrollDown',
     value: function scrollDown() {
-      return (0, _jump2.default)(this.element, {
+      this.element.dispatchEvent(this.events.jump);
+      (0, _jump2.default)(this.element, {
         duration: this.options.scrollDuration,
         offset: this.element.offsetHeight + this.options.offset
       });
+      this.element.dispatchEvent(this.events.jumped);
+      return;
     }
   }, {
     key: 'listener',
@@ -315,6 +321,15 @@ var TrowelCover = function () {
           return _this.scrollDown();
         });
       });
+    }
+  }, {
+    key: 'events',
+    value: function events() {
+      var jump = new Event('trowel.cover.jump');
+      var jumped = new Event('trowel.cover.jumped');
+      var mounted = new Event('trowel.cover.mounted');
+
+      return { jump: jump, jumped: jumped, mounted: mounted };
     }
   }, {
     key: 'options',

@@ -14,7 +14,10 @@ class TrowelCover {
     this.scrollDownTriggers = [].slice.call(this.element.querySelectorAll('[data-cover-scrolldown]'));
     this.options = customOptions;
 
-    return this.listener();
+    this.events = this.events();
+    this.listener();
+    this.element.dispatchEvent(this.events.mounted);
+    return;
   }
 
   set options(customOptions) {
@@ -34,15 +37,26 @@ class TrowelCover {
   }
 
   scrollDown() {
-    return jump(this.element, {
+    this.element.dispatchEvent(this.events.jump);
+    jump(this.element, {
       duration: this.options.scrollDuration,
       offset: this.element.offsetHeight + this.options.offset,
     });
+    this.element.dispatchEvent(this.events.jumped);
+    return;
   }
 
   listener() {
     this.scrollDownTriggers.forEach(trigger => {
       trigger.addEventListener('click', () => this.scrollDown())
     });
+  }
+
+  events() {
+    const jump = new Event('trowel.cover.jump');
+    const jumped = new Event('trowel.cover.jumped');
+    const mounted = new Event('trowel.cover.mounted');
+
+    return { jump, jumped, mounted };
   }
 }
