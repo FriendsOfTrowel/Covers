@@ -292,31 +292,22 @@ var TrowelCover = function () {
 
     this.element = element;
     this.scrollDownTriggers = [].slice.call(this.element.querySelectorAll('[data-cover-scrolldown]'));
-    this.options = this._setOptions(customOptions);
+    this.options = customOptions;
 
-    this._listener();
+    return this.listener();
   }
 
   _createClass(TrowelCover, [{
-    key: '_setOptions',
-    value: function _setOptions(customOptions) {
-      var defaultOptions = {
-        scrollDuration: 500,
-        offset: 0
-      };
-
-      var options = {};
-
-      Object.keys(defaultOptions).forEach(function (option) {
-        if (customOptions[option]) return options[option] = customOptions[option];
-        return options[option] = defaultOptions[option];
+    key: 'scrollDown',
+    value: function scrollDown() {
+      return (0, _jump2.default)(this.element, {
+        duration: this.options.scrollDuration,
+        offset: this.element.offsetHeight + this.options.offset
       });
-
-      return options;
     }
   }, {
-    key: '_listener',
-    value: function _listener() {
+    key: 'listener',
+    value: function listener() {
       var _this = this;
 
       this.scrollDownTriggers.forEach(function (trigger) {
@@ -326,12 +317,20 @@ var TrowelCover = function () {
       });
     }
   }, {
-    key: 'scrollDown',
-    value: function scrollDown() {
-      return (0, _jump2.default)(this.element, {
-        duration: this.options.scrollDuration,
-        offset: this.element.offsetHeight + this.options.offset
-      });
+    key: 'options',
+    set: function set(customOptions) {
+      var defaultOptions = {
+        scrollDuration: 500,
+        offset: 0
+      };
+
+      return this._options = Object.keys(defaultOptions).reduce(function (options, option) {
+        options[option] = customOptions[option] ? customOptions[option] : defaultOptions[option];
+        return options;
+      }, {});
+    },
+    get: function get() {
+      return this._options;
     }
   }]);
 
