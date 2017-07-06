@@ -31,11 +31,11 @@
 
     <div class="{{ elementSelector ~ 'content' }}">
         <div class="{{ elementSelector ~ 'header' }}">
-            {{ block('header') }}
+            {% block header %}{% endblock %}
         </div>
 
         <div class="{{ elementSelector ~ 'body' }}">
-            {{ block('body') }}
+            {% block body %}{% endblock %}
         </div>
 
         <div class="{{ elementSelector ~ 'footer' }}">
