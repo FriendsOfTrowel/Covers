@@ -1,6 +1,6 @@
 {
   "name": "trowel-covers",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "The official Trowel Component for covers",
   "scripts": {
     "test": "gulp",
